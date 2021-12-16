@@ -1,0 +1,22 @@
+---
+title: "Class 1- Introduction to R and R-Studio"
+description: |
+  What is R Studio?
+author:
+  - name: Eveline Miranda
+date: 2021-12-16
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

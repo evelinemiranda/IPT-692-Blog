@@ -1,0 +1,240 @@
+[
+  {
+    "path": "posts/1. welcome/",
+    "title": "Welcome to IP&T 692R-R Class;",
+    "description": "Welcome to our new blog; We hope you enjoy this semester learning R!",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T14:01:54-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-1-introduction-to-r-and-r-studio/",
+    "title": "Class 1- Introduction to R and R-Studio",
+    "description": "What is R Studio?",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T14:03:17-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-10-irt-codes-ii/",
+    "title": "Class 10-IRT codes II",
+    "description": "IRT codes part II and IRTShiny.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:18:48-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-11-factor-analysis/",
+    "title": "Class 11- Factor Analysis",
+    "description": "Factor Analysis using Lavaan Package.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:20:19-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-13-wrapping-up/",
+    "title": "Class 13- Wrapping up",
+    "description": "What did you learn in R?.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:24:30-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-14-presentations/",
+    "title": "Class 14- Presentations",
+    "description": "Project Presentation.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:25:29-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-2-data-manipulation/",
+    "title": "Class 2- Data Manipulation",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T15:58:09-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-3-data-manipulation-ii/",
+    "title": "Class 3- Data Manipulation II",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T15:47:58-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-4-Data Visualization/",
+    "title": "Class 4- GGPLOT - part II",
+    "description": "The language of graphs.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T15:48:49-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-5-r-markdown/",
+    "title": "Class 5- R-Markdown",
+    "description": "Doing Great Things in R.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T15:59:54-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-6-basic-statistics-in-r/",
+    "title": "Class 6- Basic Statistics in R",
+    "description": "T-test, ANOVA, regression, and more.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:00:55-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-7-simmulation/",
+    "title": "Class 7- Simmulation",
+    "description": "Let's talk about simmulation!",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:02:32-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-8-functions-and-loops/",
+    "title": "Class 8-Functions and loops",
+    "description": "What about shiny too?",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:06:59-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-12-16-class-9-missing-values-and-irt-codes-i/",
+    "title": "Class 9-Missing values and IRT codes I",
+    "description": "Missin values and packages for IRT analysis",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:08:42-07:00",
+    "input_file": {}
+  }
+]

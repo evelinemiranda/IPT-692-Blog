@@ -1,0 +1,14 @@
+name: "IP&T 692R"
+title: "Eveline Miranda"
+description: |
+  This is a website to help students registered for the BYU IP&T 692R (Winter) to learn R; I hope you enjoy this amazing experience!
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Syllabus"
+      href: about.html
+    - text: "About the author"
+      href: About-the-Author.html
+output: distill::distill_article

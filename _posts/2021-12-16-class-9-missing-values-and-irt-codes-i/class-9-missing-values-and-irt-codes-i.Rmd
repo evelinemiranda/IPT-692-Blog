@@ -1,0 +1,23 @@
+---
+title: "Class 9-Missing values and IRT codes I"
+description: |
+  Missin values and packages for IRT analysis
+author:
+  - name: Eveline Miranda
+    url: {}
+date: 2021-12-16
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
