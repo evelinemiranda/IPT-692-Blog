@@ -1,5 +1,56 @@
 [
   {
+    "path": "posts/_2021-12-16-class-12-quasi-experiment-in-r/",
+    "title": "Class 12- Quasi- Experiment in R",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-17T07:38:40-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/_2021-12-16-class-13-wrapping-up/",
+    "title": "Class 13- Wrapping up",
+    "description": "What did you learn in R?.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:24:30-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/_2021-12-16-class-14-presentations/",
+    "title": "Class 14- Presentations",
+    "description": "Project Presentation.",
+    "author": [
+      {
+        "name": "Eveline Miranda",
+        "url": {}
+      }
+    ],
+    "date": "2021-12-16",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-12-16T16:25:29-07:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/1. welcome/",
     "title": "Welcome to IP&T 692R-R Class;",
     "description": "Welcome to our new blog; We hope you enjoy this semester learning R!",
@@ -65,40 +116,6 @@
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
     "last_modified": "2021-12-16T16:20:19-07:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-12-16-class-13-wrapping-up/",
-    "title": "Class 13- Wrapping up",
-    "description": "What did you learn in R?.",
-    "author": [
-      {
-        "name": "Eveline Miranda",
-        "url": {}
-      }
-    ],
-    "date": "2021-12-16",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-12-16T16:24:30-07:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-12-16-class-14-presentations/",
-    "title": "Class 14- Presentations",
-    "description": "Project Presentation.",
-    "author": [
-      {
-        "name": "Eveline Miranda",
-        "url": {}
-      }
-    ],
-    "date": "2021-12-16",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-12-16T16:25:29-07:00",
     "input_file": {}
   },
   {
@@ -188,8 +205,8 @@
   },
   {
     "path": "posts/2021-12-16-class-7-simmulation/",
-    "title": "Class 7- Simmulation",
-    "description": "Let's talk about simmulation!",
+    "title": "Class 7- Simulation",
+    "description": "Let's talk about simulation!",
     "author": [
       {
         "name": "Eveline Miranda",
@@ -200,7 +217,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-12-16T16:02:32-07:00",
+    "last_modified": "2021-12-17T10:35:06-07:00",
     "input_file": {}
   },
   {
