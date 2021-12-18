@@ -13,11 +13,160 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = T)
+library(tidyverse)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+Using an R dataset
+```{r data}
+data(mpg)
+?mpg
+glimpse(mpg)
+summary(mpg)
+```
+# Looking at mpg$year
+```{r  class}
+summary(mpg$year)
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+# Change year to factor
+mpg$year<- as.factor(mpg$year)
 
+# class of mpg$year
+class(mpg$year)
+
+# another summary
+summary(mpg$year)
+```
+#look at mpg$trans
+```{r Changing class}
+summary(mpg$trans)
+mpg$trans<-as.factor(mpg$trans)
+summary(mpg$trans)
+summary(mpg$cyl)
+plot(mpg$cyl)
+plot(mpg$trans)
+mpg$displ<-as.double(mpg$displ)
+```
+#Time for playing with variables and changing those that are needed
+
+# ggplot
+```{r data visualization 1}
+
+# ggplot 
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point()
+```
+
+```{r data visualization 2}
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point()+
+  geom_smooth()
+```
+
+```{r data visualization 3}
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point()+
+  geom_smooth(method="lm", se=FALSE)
+```
+
+```{r data visualization 4}
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point()+
+  geom_smooth(method = "lm")
+```
+
+```{r data visualization 5}
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point(col="blue")+
+  geom_smooth( se = FALSE, col="red")+
+  theme_bw()+
+  facet_grid(vars(year))
+```
+
+```{r data visualization 6}
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point()+
+  geom_smooth(method = lm, se = FALSE)+
+  geom_smooth(color = "red")
+```
+
+```{r data visualization 7}
+ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  geom_smooth(color = "red", se = F)+
+  theme_bw()
+```
+
+```{r data visualization 8}
+ggplot(mpg, mapping = aes(x= displ, y = hwy, color = class)) +
+  geom_point()+
+  geom_smooth(method = "lm", se = F)
+  
+```
+#class 2- DATA VISUALIZATION- geoms + mapping and facets - good day for practicing- students will delete, change configurations and see the results
+##teach summary and how to use help in R
+## teach how to use ggplot assist install.packages("ggThemeAssist") - select the code and go to addins - I added addins using view show TOOLBAR
+## how to use HELP and the cheat sheet
+
+```{r data visualization 9}
+summary(mpg$hwy)
+ggplot(data= mpg, mapping = aes(x= displ, y= hwy))+
+  geom_point(aes(size=drv))+
+  geom_smooth(mapping = aes(linetype= drv), method ="lm", se = F, size= 1)
+```
+
+```{r data visualization 10}
+ggplot(data= mpg, mapping = aes(x= displ, y= hwy))+
+  geom_point(aes(size=class, color= drv))+
+  geom_smooth(mapping = aes(linetype= drv), method ="lm", se = F, size= 1)
+```
+
+```{r data visualization 11}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = class)) +
+  geom_point(position = "jitter", show.legend = F) +
+  geom_smooth(method = "lm", se= F, show.legend = T)+
+  facet_wrap(vars(class), ncol=2)
+```
+
+```{r data visualization 12}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
+  geom_point(position = "jitter", show.legend = FALSE) +
+  geom_smooth(method = "lm", show.legend = FALSE, color = "black", size = 0.5, se= F) +
+  facet_grid(rows = vars(as.factor(cyl)), cols = vars(drv))
+```
+
+```{r data visualization 13}
+ggplot(data = mpg,
+       mapping = aes(x = displ, y = hwy, group = drv, color = drv)) +
+  geom_point(size = 2, show.legend = T) +
+  geom_smooth(color = "blue", se = FALSE)
+```
+
+```{r data visualization 14}
+
+ggplot(data = mpg,
+       mapping = aes(x = displ, y = hwy, color = drv)) +
+  geom_point(mapping = aes(color = drv), size = 2) +
+  geom_smooth(se = FALSE, color = "blue")
+```
+#not writing data= and mapping
+
+```{r data visualization 15}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point( aes(color = drv), size = 2) +
+  geom_smooth(mapping = aes(linetype = drv), se = FALSE)
+```
+
+```{r data visualization 16}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, colour = year)) +
+  geom_point(
+    size = .2,
+    shape = 7,
+    stroke = 1, 
+    alpha=.4
+  )+
+  theme_minimal()
+
+```
 

@@ -154,8 +154,8 @@
   },
   {
     "path": "posts/2021-12-16-class-4-Data Visualization/",
-    "title": "Class 4- GGPLOT - part II",
-    "description": "The language of graphs.",
+    "title": "Class 4- Data visualization",
+    "description": "Ggplot2: The language of graphs.",
     "author": [
       {
         "name": "Eveline Miranda",
@@ -164,10 +164,10 @@
     ],
     "date": "2021-12-16",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-12-16T15:48:49-07:00",
-    "input_file": {}
+    "contents": "\nUsing an R dataset\n\n\ndata(mpg)\n?mpg\nglimpse(mpg)\n\n\nRows: 234\nColumns: 11\n$ manufacturer <chr> \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\",…\n$ model        <chr> \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4 q…\n$ displ        <dbl> 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.…\n$ year         <int> 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999,…\n$ cyl          <int> 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6,…\n$ trans        <chr> \"auto(l5)\", \"manual(m5)\", \"manual(m6)\", \"auto(a…\n$ drv          <chr> \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"4\", \"4\", \"4…\n$ cty          <int> 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15,…\n$ hwy          <int> 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25,…\n$ fl           <chr> \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p…\n$ class        <chr> \"compact\", \"compact\", \"compact\", \"compact\", \"co…\n\nsummary(mpg)\n\n\n manufacturer          model               displ            year     \n Length:234         Length:234         Min.   :1.600   Min.   :1999  \n Class :character   Class :character   1st Qu.:2.400   1st Qu.:1999  \n Mode  :character   Mode  :character   Median :3.300   Median :2004  \n                                       Mean   :3.472   Mean   :2004  \n                                       3rd Qu.:4.600   3rd Qu.:2008  \n                                       Max.   :7.000   Max.   :2008  \n      cyl           trans               drv           \n Min.   :4.000   Length:234         Length:234        \n 1st Qu.:4.000   Class :character   Class :character  \n Median :6.000   Mode  :character   Mode  :character  \n Mean   :5.889                                        \n 3rd Qu.:8.000                                        \n Max.   :8.000                                        \n      cty             hwy             fl           \n Min.   : 9.00   Min.   :12.00   Length:234        \n 1st Qu.:14.00   1st Qu.:18.00   Class :character  \n Median :17.00   Median :24.00   Mode  :character  \n Mean   :16.86   Mean   :23.44                     \n 3rd Qu.:19.00   3rd Qu.:27.00                     \n Max.   :35.00   Max.   :44.00                     \n    class          \n Length:234        \n Class :character  \n Mode  :character  \n                   \n                   \n                   \n\nLooking at mpg\\(year <div class=\"layout-chunk\" data-layout=\"l-body\"> <div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary<\/a><\/span><span class='op'>(<\/span><span class='va'>mpg<\/span><span class='op'>\\)year)\n\n\n",
+    "preview": "posts/2021-12-16-class-4-Data Visualization/class-4-Data-Visualization_files/figure-html5/Changing class-1.png",
+    "last_modified": "2021-12-18T15:22:20-07:00",
+    "input_file": "class-4-Data-Visualization.knit.md"
   },
   {
     "path": "posts/2021-12-16-class-5-r-markdown/",
