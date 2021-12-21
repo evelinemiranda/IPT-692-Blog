@@ -13,11 +13,30 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+```{r basic codes}
+data(cars)
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+plot(cars, col="blue")
+hist(cars$speed)
+
+summary(cars)
+attach(cars)
+hist(speed)
+class(dist)
+length(speed)
+unique(speed)
+head(cars, 3)
+tail(cars, 10)
+cars[, 1]
+cars[1:25,]
+cars[1:10,1]
+
+#Functions
+?median
+```
 
 

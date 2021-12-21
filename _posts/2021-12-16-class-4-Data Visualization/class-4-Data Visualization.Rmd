@@ -13,160 +13,230 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = T)
+knitr::opts_chunk$set(echo = TRUE)
+library(nycflights13)
 library(tidyverse)
 ```
 
-Using an R dataset
-```{r data}
-data(mpg)
-?mpg
-glimpse(mpg)
-summary(mpg)
-```
-# Looking at mpg$year
-```{r  class}
-summary(mpg$year)
+## Aesthetic Mappings and Facets
 
-# Change year to factor
-mpg$year<- as.factor(mpg$year)
 
-# class of mpg$year
-class(mpg$year)
-
-# another summary
-summary(mpg$year)
-```
-#look at mpg$trans
-```{r Changing class}
-summary(mpg$trans)
-mpg$trans<-as.factor(mpg$trans)
-summary(mpg$trans)
-summary(mpg$cyl)
-plot(mpg$cyl)
-plot(mpg$trans)
-mpg$displ<-as.double(mpg$displ)
-```
-#Time for playing with variables and changing those that are needed
-
-# ggplot
-```{r data visualization 1}
-
-# ggplot 
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point()
-```
-
-```{r data visualization 2}
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point()+
+```{r cars}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point() +
   geom_smooth()
+
 ```
 
-```{r data visualization 3}
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point()+
-  geom_smooth(method="lm", se=FALSE)
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure1, echo=FALSE}
+plot(pressure)
 ```
 
-```{r data visualization 4}
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point()+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Regression scatterplot    
+*  Highway miles per gallon on displacement  
+*  Color by drive train (drv)  
+*  Linetype by drive train  
+*  Linear regression with no confidence interval  
+*  Increase the size of the lines  
+
+```{r linear regression1}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
+  geom_point() +
+  geom_smooth(mapping = aes(linetype = drv), method = "lm", se = FALSE, size = 2)
+```
+
+## Loess smoothed scatterplot with points of various sizes
+*  Highway miles per gallon on displacement    
+*  Color points by car class  
+*  Point size by city miles per gallon (cty)  
+*  Large red loess line for all point and no confidence interval  
+
+```{r linear regression for all pointsA, message = FALSE}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = class, size = cty)) +
+  geom_smooth(se = FALSE, size = 2, color = "red")
+```
+
+## Linear regression of highway on displacement
+*  Color by vehicle class
+*  Simple regression by vehicle class
+*  Show all points
+
+```{r regression by vehicle classa}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = class)) +
+  geom_point(position = "jitter") +
   geom_smooth(method = "lm")
 ```
 
-```{r data visualization 5}
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point(col="blue")+
-  geom_smooth( se = FALSE, col="red")+
-  theme_bw()+
-  facet_grid(vars(year))
-```
+## Linear regression of highway on displacement
+*  Color by vehicle class
+*  Simple regression by vehicle class
+*  Each class has its own scatterplot
+*  Show all the points  
+*  No Legend
 
-```{r data visualization 6}
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point()+
-  geom_smooth(method = lm, se = FALSE)+
-  geom_smooth(color = "red")
-```
-
-```{r data visualization 7}
-ggplot(mpg, mapping = aes(x= displ, y = hwy)) +
-  geom_point()+
-  geom_smooth(method = "lm", se = FALSE)+
-  geom_smooth(color = "red", se = F)+
-  theme_bw()
-```
-
-```{r data visualization 8}
-ggplot(mpg, mapping = aes(x= displ, y = hwy, color = class)) +
-  geom_point()+
-  geom_smooth(method = "lm", se = F)
-  
-```
-#class 2- DATA VISUALIZATION- geoms + mapping and facets - good day for practicing- students will delete, change configurations and see the results
-##teach summary and how to use help in R
-## teach how to use ggplot assist install.packages("ggThemeAssist") - select the code and go to addins - I added addins using view show TOOLBAR
-## how to use HELP and the cheat sheet
-
-```{r data visualization 9}
-summary(mpg$hwy)
-ggplot(data= mpg, mapping = aes(x= displ, y= hwy))+
-  geom_point(aes(size=drv))+
-  geom_smooth(mapping = aes(linetype= drv), method ="lm", se = F, size= 1)
-```
-
-```{r data visualization 10}
-ggplot(data= mpg, mapping = aes(x= displ, y= hwy))+
-  geom_point(aes(size=class, color= drv))+
-  geom_smooth(mapping = aes(linetype= drv), method ="lm", se = F, size= 1)
-```
-
-```{r data visualization 11}
+```{r regression by vehicle class with separate scatterplotsa}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = class)) +
-  geom_point(position = "jitter", show.legend = F) +
-  geom_smooth(method = "lm", se= F, show.legend = T)+
-  facet_wrap(vars(class), ncol=2)
-```
+  geom_point(position = "jitter", show.legend = FALSE) +
+  geom_smooth(method = "lm", show.legend = FALSE) +
+  facet_wrap(vars(class))
+```  
 
-```{r data visualization 12}
+## Linear regression of highway on displacement
+*  Color by drivetrain type
+*  Simple regression (hwy on displacement) by drive train type and number of cylinders
+*  Draw a larger, black regression line
+*  Each drive train and number of cylinders has its own scatterplot
+*  Show all the points  
+*  No Legend
+
+```{r regression by vehicle class with drive train by cylinders A}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
   geom_point(position = "jitter", show.legend = FALSE) +
-  geom_smooth(method = "lm", show.legend = FALSE, color = "black", size = 0.5, se= F) +
+  geom_smooth(method = "lm", show.legend = FALSE, color = "black", size = 1) +
   facet_grid(rows = vars(as.factor(cyl)), cols = vars(drv))
+```  
+
+## Bar chart of car classes  
+*  Bar colored by car class  
+*  No legend  
+
+```{r bar chart by car class-a}
+ggplot(data = mpg, mapping = aes(x = class, fill = class)) +
+  geom_bar(show.legend = FALSE)
 ```
 
-```{r data visualization 13}
-ggplot(data = mpg,
-       mapping = aes(x = displ, y = hwy, group = drv, color = drv)) +
-  geom_point(size = 2, show.legend = T) +
-  geom_smooth(color = "blue", se = FALSE)
+## Bar chart of car classes  
+*  Bar colored by car class  
+*  Stack bar in each by drive type  
+*  Proportion of drive for each class of vehicle  
+
+```{r bar chart by car class and drive type}
+ggplot(data = mpg, mapping = aes(x = class, fill = drv)) +
+  geom_bar(position = "fill")
+```  
+
+## Bar chart of car classes  
+*  Vertical orientation  
+*  Number of by drive train type for each vehicle class  
+
+```{r bar chart by car class and drive type number of vehicles}
+ggplot(data = mpg, mapping = aes(x = class, fill = drv)) +
+  geom_bar(position = "dodge")
+```  
+
+```{r geom bar}
+ggplot(data = mpg, mapping = aes(x = class, fill = class)) +
+  geom_bar()
 ```
 
-```{r data visualization 14}
+##Columns
+ group_by
+ Summarize 
+ class_count
 
-ggplot(data = mpg,
-       mapping = aes(x = displ, y = hwy, color = drv)) +
-  geom_point(mapping = aes(color = drv), size = 2) +
-  geom_smooth(se = FALSE, color = "blue")
+```{r columns}
+class_count <- mpg %>% 
+  group_by(class) %>% 
+  summarize(count = n())
+class_count %>% print()
 ```
-#not writing data= and mapping
 
-```{r data visualization 15}
+##Distribution numerical variables
+
+How to summarize numerical data?
+
+Histograms
+```{r  histograms}
+ggplot(data = mpg, mapping = aes(x = hwy)) +
+  geom_histogram(fill = "blue", binwidth = 2.5)
+```
+
+Frequency polygons
+```{r frequency polygons}
+ggplot(data = mpg, mapping = aes(x = hwy)) +
+  geom_freqpoly(color = "blue", binwidth = 2.5)
+```
+
+Densities
+
+``` {r Densities}
+ggplot(data = mpg, mapping = aes(x = hwy)) +
+  geom_density(fill = "blue")
+```
+
+RUG
+
+```{r rug}
+ggplot(data = faithful, mapping = aes(x = eruptions)) +
+  geom_rug()
+```
+
+##Combinations of density plots
+
+``` {r combination  of densities plots}
+ggplot(data = faithful, mapping = aes(x = eruptions)) +
+  geom_histogram(fill = "lightblue")
+```
+
+```{r 1}
+ggplot(data = faithful, mapping = aes(x = eruptions)) +
+  geom_freqpoly(color = "lightblue")
+```
+
+```{r 3}
+ggplot(data = faithful, mapping = aes(x = eruptions)) +
+  geom_freqpoly(color = "lightblue")
+```
+
+```{r 4}
+ggplot(data = faithful, mapping = aes(x = eruptions)) +
+  geom_density(fill = "lightblue")
+```
+
+##combinations:
+```{r combined}
+ggplot(data = faithful, mapping = aes(x = eruptions)) +
+  geom_histogram(aes(y = stat(density)), fill = "lightgreen") +
+  geom_density(fill = "blue", alpha = 0.3) +
+  geom_rug(color = "red")
+```
+
+# Violin Plots
+
+```{r violin 1}
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, fill = class)) +
+  geom_violin(show.legend = FALSE)
+```
+
+# Boxplot
+```{r boxplot}
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, fill = class)) +
+  geom_boxplot(show.legend = FALSE)
+```
+
+# Violin plots:
+```{r violin plots}
+ggplot(data = mpg, mapping = aes(x = class, y = hwy, fill = class)) +
+  geom_violin(show.legend = FALSE) +
+  geom_boxplot(show.legend = FALSE, width = 0.05, fill = "grey")
+```
+
+# Numerical variables
+
+##Scatterplot
+
+```{r scatterplot}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
-  geom_point( aes(color = drv), size = 2) +
-  geom_smooth(mapping = aes(linetype = drv), se = FALSE)
+  geom_point() 
 ```
 
-```{r data visualization 16}
-ggplot(data = mpg, mapping = aes(x = displ, y = hwy, colour = year)) +
-  geom_point(
-    size = .2,
-    shape = 7,
-    stroke = 1, 
-    alpha=.4
-  )+
-  theme_minimal()
-
-```
+## Aesthetic Mappings and Facets
 

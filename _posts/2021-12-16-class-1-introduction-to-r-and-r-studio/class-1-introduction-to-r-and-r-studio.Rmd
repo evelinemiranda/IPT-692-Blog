@@ -10,13 +10,172 @@ output:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+data("women")
+plot(women)
+data("starwars")
+view(starwars)
+
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+```{r data ploting women}
+plot(women)
+data("starwars")
+view(starwars)
+str(starwars) # explain each variable characteristics
+
+```
+
+```{r selecting and filtering}
+#write select without creating an object
+?dplyr::select
+select(starwars,gender, mass, height, species)
+
+Data1<-select(starwars,gender, mass, height, species)
+Data1.1<- filter(Data1, species == "Human")
+
+```
+
+Using piping operator
+```{r piping}
+FinalData<-starwars %>% 
+  select(gender, mass, height, species) %>% 
+  filter(species=="Human") 
+
+```
+Lets omit NA and see the results
+```{r ommiting NA}
+FinalData1<-starwars %>% 
+  select(gender, mass, height, species) %>% 
+  filter(species=="Human") %>% 
+  na.omit()
+
+FinalData1
+```
 
 
+Now let's create a new variable called heightM (heigh in meters)
+```{r mutate}
+FinalData2<-starwars %>% 
+  select(gender, mass, height, species) %>%
+  filter(species=="Human") %>% 
+  na.omit() %>% 
+  mutate(heightM = height/100 ) %>% 
+  mutate(BMI=mass/height) 
+FinalData2
+  # MUTATE- we could create a new variable or change the variable. I suggest creating a new variable.
+
+```
+
+```{r group by and summarize}
+FinalData3<-starwars %>% 
+  select(gender, mass, height, species) %>%
+  filter(species=="Human") %>% 
+  na.omit() %>% 
+  mutate(heightM = height/100 ) %>% 
+  mutate(BMI=mass/height) %>% 
+  group_by(gender) %>% 
+  summarize(mean_height=mean(height))
+FinalData3
+```
+
+```{r group by}
+FinalData4<-starwars %>% 
+  select(gender, mass, height, species) %>%
+  filter(species=="Human") %>% 
+  na.omit() %>% 
+  mutate(heightM = height/100 ) %>% 
+  mutate(BMI=mass/height) %>% 
+  group_by(gender) %>% 
+  summarize(mean_BMI=mean(BMI)) 
+FinalData4
+```
+
+Types of Data 
+How to change the data type in  R
+```{r class and structure}
+class(starwars)
+class(starwars$height)
+str(starwars)
+# Changing the type of the variable in r
+
+hist(starwars$height)
+
+starwars$hair_color<-as.factor(starwars$hair_color)
+
+plot(starwars$hair_color)
+
+```
+
+Time for practicing
+
+Time for selecting different variables.
+
+# using everything else
+```{r everything}
+sw<-starwars %>% 
+  select(name, mass, height, sex, everything()) %>% 
+  rename(name1=name) %>% 
+  rename(weight=mass)
+#rename: we start with the new name and then add the old one.
+
+```
+
+# recoding 
+```{r recoding gender}
+sw$sex<-as.factor(sw$sex)
+
+#Removing object
+rm ()
+
+#
+swRec<-sw %>% 
+  select(name1, weight, height, sex, gender) %>% 
+  rename(name=name1) %>% 
+  mutate(heightM= height/100) %>% 
+  filter(gender %in% c("masculine", "feminine")) %>% 
+  mutate(gender=recode(gender, masculine = "M", feminine = "F")) %>% 
+  mutate(size=height>1 &weight>75) %>%  # we got true and false
+  mutate(size= if_else(size==TRUE, "Big", "Small"))
+# %in% explain that it mean include everything. IN filter, it could be used filter(gender=="masculine"| gender== "feminine"). In this case we use concatenate meaning everything inside should be filtered
+
+```
+
+```{r filtering tips}
+data("msleep")
+a<-msleep %>% 
+  select(name, sleep_total) %>% 
+  filter(sleep_total>18)
+  
+b<-msleep %>% 
+  select(name, sleep_total) %>% 
+  filter(!sleep_total>18) # ! all variables NOT bigger than 18
+
+c<-msleep %>% 
+  select(name, order, bodywt, sleep_total) %>% 
+  filter(order=="Primates", bodywt>20)
+
+d<-msleep %>% 
+  select(name, order, bodywt, sleep_total) %>% 
+  filter(order=="Primates"| bodywt>20) # | means or (both criteria needs to be satisfied)
+
+e<- msleep %>% 
+  select(name, order, bodywt, sleep_total) %>% 
+  filter(between(sleep_total, 10, 18))
+
+f<- msleep %>% 
+  select(name, order, bodywt, sleep_total) %>% 
+  filter(near(sleep_total, 10, tol = 0.5))
+
+g<- msleep %>% 
+  select(name, order, bodywt, sleep_total, conservation) %>% 
+  filter(is.na(conservation)) 
+
+h<- msleep %>% 
+  select(name, order, bodywt, sleep_total, conservation) %>% 
+  filter(order=="Rodentia" & !is.na(conservation)) #needs to satisfy both conditions
+
+```

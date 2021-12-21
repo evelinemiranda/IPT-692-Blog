@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["class-1-introduction-to-r-and-r-studio_files/anchor-4.2.2/anchor.min.js","class-1-introduction-to-r-and-r-studio_files/bowser-1.9.3/bowser.min.js","class-1-introduction-to-r-and-r-studio_files/distill-2.2.21/template.v2.js","class-1-introduction-to-r-and-r-studio_files/figure-html5/class and structure-1.png","class-1-introduction-to-r-and-r-studio_files/figure-html5/class and structure-2.png","class-1-introduction-to-r-and-r-studio_files/figure-html5/data ploting women-1.png","class-1-introduction-to-r-and-r-studio_files/figure-html5/setup-1.png","class-1-introduction-to-r-and-r-studio_files/header-attrs-2.11/header-attrs.js","class-1-introduction-to-r-and-r-studio_files/jquery-3.6.0/jquery-3.6.0.js","class-1-introduction-to-r-and-r-studio_files/jquery-3.6.0/jquery-3.6.0.min.js","class-1-introduction-to-r-and-r-studio_files/jquery-3.6.0/jquery-3.6.0.min.map","class-1-introduction-to-r-and-r-studio_files/popper-2.6.0/popper.min.js","class-1-introduction-to-r-and-r-studio_files/tippy-6.2.7/tippy-bundle.umd.min.js","class-1-introduction-to-r-and-r-studio_files/tippy-6.2.7/tippy-light-border.css","class-1-introduction-to-r-and-r-studio_files/tippy-6.2.7/tippy.css","class-1-introduction-to-r-and-r-studio_files/tippy-6.2.7/tippy.umd.min.js","class-1-introduction-to-r-and-r-studio_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2103,9 +2103,805 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>women</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="class-1-introduction-to-r-and-r-studio_files/figure-html5/data%20ploting%20women-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"starwars"</span><span class='op'>)</span>
+<span class='fu'><a href='https://tibble.tidyverse.org/reference/view.html'>view</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>)</span> <span class='co'># explain each variable characteristics</span>
+</code></pre>
+</div>
+<pre><code>tibble [87 × 14] (S3: tbl_df/tbl/data.frame)
+ $ name      : chr [1:87] &quot;Luke Skywalker&quot; &quot;C-3PO&quot; &quot;R2-D2&quot; &quot;Darth Vader&quot; ...
+ $ height    : int [1:87] 172 167 96 202 150 178 165 97 183 182 ...
+ $ mass      : num [1:87] 77 75 32 136 49 120 75 32 84 77 ...
+ $ hair_color: chr [1:87] &quot;blond&quot; NA NA &quot;none&quot; ...
+ $ skin_color: chr [1:87] &quot;fair&quot; &quot;gold&quot; &quot;white, blue&quot; &quot;white&quot; ...
+ $ eye_color : chr [1:87] &quot;blue&quot; &quot;yellow&quot; &quot;red&quot; &quot;yellow&quot; ...
+ $ birth_year: num [1:87] 19 112 33 41.9 19 52 47 NA 24 57 ...
+ $ sex       : chr [1:87] &quot;male&quot; &quot;none&quot; &quot;none&quot; &quot;male&quot; ...
+ $ gender    : chr [1:87] &quot;masculine&quot; &quot;masculine&quot; &quot;masculine&quot; &quot;masculine&quot; ...
+ $ homeworld : chr [1:87] &quot;Tatooine&quot; &quot;Tatooine&quot; &quot;Naboo&quot; &quot;Tatooine&quot; ...
+ $ species   : chr [1:87] &quot;Human&quot; &quot;Droid&quot; &quot;Droid&quot; &quot;Human&quot; ...
+ $ films     :List of 87
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; ...
+  ..$ : chr [1:6] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:7] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:4] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; ...
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr [1:6] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; ...
+  ..$ : chr [1:4] &quot;The Empire Strikes Back&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; &quot;The Force Awakens&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr [1:3] &quot;The Phantom Menace&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:3] &quot;The Empire Strikes Back&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:3] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;The Empire Strikes Back&quot;
+  ..$ : chr &quot;The Empire Strikes Back&quot;
+  ..$ : chr [1:2] &quot;The Empire Strikes Back&quot; &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;The Empire Strikes Back&quot;
+  ..$ : chr [1:2] &quot;Return of the Jedi&quot; &quot;The Force Awakens&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+ $ vehicles  :List of 87
+  ..$ : chr [1:2] &quot;Snowspeeder&quot; &quot;Imperial Speeder Bike&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Imperial Speeder Bike&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Tribubble bongo&quot;
+  ..$ : chr [1:2] &quot;Zephyr-G swoop bike&quot; &quot;XJ-6 airspeeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr &quot;AT-ST&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Snowspeeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Tribubble bongo&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Sith speeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Flitknot speeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Koro-2 Exodrive airspeeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Tsmeu-6 personal wheel bike&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+ $ starships :List of 87
+  ..$ : chr [1:2] &quot;X-wing&quot; &quot;Imperial shuttle&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;TIE Advanced x1&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;X-wing&quot;
+  ..$ : chr [1:5] &quot;Jedi starfighter&quot; &quot;Trade Federation cruiser&quot; &quot;Naboo star skiff&quot; &quot;Jedi Interceptor&quot; ...
+  ..$ : chr [1:3] &quot;Trade Federation cruiser&quot; &quot;Jedi Interceptor&quot; &quot;Naboo fighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr [1:2] &quot;Millennium Falcon&quot; &quot;Imperial shuttle&quot;
+  ..$ : chr [1:2] &quot;Millennium Falcon&quot; &quot;Imperial shuttle&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;X-wing&quot;
+  ..$ : chr &quot;X-wing&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Slave 1&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Millennium Falcon&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;A-wing&quot;
+  ..$ : chr(0) 
+  ..$ : chr &quot;Millennium Falcon&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Naboo Royal Starship&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Scimitar&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Jedi starfighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr &quot;Naboo fighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Belbullab-22 starfighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;T-70 X-wing fighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr [1:3] &quot;H-type Nubian yacht&quot; &quot;Naboo star skiff&quot; &quot;Naboo fighter&quot;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#write select without creating an object</span>
+<span class='op'>?</span><span class='fu'>dplyr</span><span class='fu'>::</span><span class='va'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span>
+<span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>starwars</span>,<span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 87 × 4
+   gender     mass height species
+   &lt;chr&gt;     &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;  
+ 1 masculine    77    172 Human  
+ 2 masculine    75    167 Droid  
+ 3 masculine    32     96 Droid  
+ 4 masculine   136    202 Human  
+ 5 feminine     49    150 Human  
+ 6 masculine   120    178 Human  
+ 7 feminine     75    165 Human  
+ 8 masculine    32     97 Droid  
+ 9 masculine    84    183 Human  
+10 masculine    77    182 Human  
+# … with 77 more rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Data1</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>starwars</span>,<span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span>
+<span class='va'>Data1.1</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Data1</span>, <span class='va'>species</span> <span class='op'>==</span> <span class='st'>"Human"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+Using piping operator
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>FinalData</span><span class='op'>&lt;-</span><span class='va'>starwars</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>species</span><span class='op'>==</span><span class='st'>"Human"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+Lets omit NA and see the results
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>FinalData1</span><span class='op'>&lt;-</span><span class='va'>starwars</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>species</span><span class='op'>==</span><span class='st'>"Human"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>FinalData1</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 22 × 4
+   gender     mass height species
+   &lt;chr&gt;     &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;  
+ 1 masculine    77    172 Human  
+ 2 masculine   136    202 Human  
+ 3 feminine     49    150 Human  
+ 4 masculine   120    178 Human  
+ 5 feminine     75    165 Human  
+ 6 masculine    84    183 Human  
+ 7 masculine    77    182 Human  
+ 8 masculine    84    188 Human  
+ 9 masculine    80    180 Human  
+10 masculine    77    170 Human  
+# … with 12 more rows</code></pre>
+</div>
+Now let’s create a new variable called heightM (heigh in meters)
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>FinalData2</span><span class='op'>&lt;-</span><span class='va'>starwars</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>species</span><span class='op'>==</span><span class='st'>"Human"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>heightM <span class='op'>=</span> <span class='va'>height</span><span class='op'>/</span><span class='fl'>100</span> <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>BMI<span class='op'>=</span><span class='va'>mass</span><span class='op'>/</span><span class='va'>height</span><span class='op'>)</span> 
+<span class='va'>FinalData2</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 22 × 6
+   gender     mass height species heightM   BMI
+   &lt;chr&gt;     &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
+ 1 masculine    77    172 Human      1.72 0.448
+ 2 masculine   136    202 Human      2.02 0.673
+ 3 feminine     49    150 Human      1.5  0.327
+ 4 masculine   120    178 Human      1.78 0.674
+ 5 feminine     75    165 Human      1.65 0.455
+ 6 masculine    84    183 Human      1.83 0.459
+ 7 masculine    77    182 Human      1.82 0.423
+ 8 masculine    84    188 Human      1.88 0.447
+ 9 masculine    80    180 Human      1.8  0.444
+10 masculine    77    170 Human      1.7  0.453
+# … with 12 more rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r">  <span class='co'># MUTATE- we could create a new variable or change the variable. I suggest creating a new variable.</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>FinalData3</span><span class='op'>&lt;-</span><span class='va'>starwars</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>species</span><span class='op'>==</span><span class='st'>"Human"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>heightM <span class='op'>=</span> <span class='va'>height</span><span class='op'>/</span><span class='fl'>100</span> <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>BMI<span class='op'>=</span><span class='va'>mass</span><span class='op'>/</span><span class='va'>height</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>gender</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_height<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>height</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>FinalData3</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 2 × 2
+  gender    mean_height
+  &lt;chr&gt;           &lt;dbl&gt;
+1 feminine         160 
+2 masculine        183.</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>FinalData4</span><span class='op'>&lt;-</span><span class='va'>starwars</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>gender</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>species</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>species</span><span class='op'>==</span><span class='st'>"Human"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>heightM <span class='op'>=</span> <span class='va'>height</span><span class='op'>/</span><span class='fl'>100</span> <span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>BMI<span class='op'>=</span><span class='va'>mass</span><span class='op'>/</span><span class='va'>height</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>gender</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_BMI<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>BMI</span><span class='op'>)</span><span class='op'>)</span> 
+<span class='va'>FinalData4</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 2 × 2
+  gender    mean_BMI
+  &lt;chr&gt;        &lt;dbl&gt;
+1 feminine     0.351
+2 masculine    0.475</code></pre>
+</div>
+Types of Data How to change the data type in R
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>$</span><span class='va'>height</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>tibble [87 × 14] (S3: tbl_df/tbl/data.frame)
+ $ name      : chr [1:87] &quot;Luke Skywalker&quot; &quot;C-3PO&quot; &quot;R2-D2&quot; &quot;Darth Vader&quot; ...
+ $ height    : int [1:87] 172 167 96 202 150 178 165 97 183 182 ...
+ $ mass      : num [1:87] 77 75 32 136 49 120 75 32 84 77 ...
+ $ hair_color: chr [1:87] &quot;blond&quot; NA NA &quot;none&quot; ...
+ $ skin_color: chr [1:87] &quot;fair&quot; &quot;gold&quot; &quot;white, blue&quot; &quot;white&quot; ...
+ $ eye_color : chr [1:87] &quot;blue&quot; &quot;yellow&quot; &quot;red&quot; &quot;yellow&quot; ...
+ $ birth_year: num [1:87] 19 112 33 41.9 19 52 47 NA 24 57 ...
+ $ sex       : chr [1:87] &quot;male&quot; &quot;none&quot; &quot;none&quot; &quot;male&quot; ...
+ $ gender    : chr [1:87] &quot;masculine&quot; &quot;masculine&quot; &quot;masculine&quot; &quot;masculine&quot; ...
+ $ homeworld : chr [1:87] &quot;Tatooine&quot; &quot;Tatooine&quot; &quot;Naboo&quot; &quot;Tatooine&quot; ...
+ $ species   : chr [1:87] &quot;Human&quot; &quot;Droid&quot; &quot;Droid&quot; &quot;Human&quot; ...
+ $ films     :List of 87
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; ...
+  ..$ : chr [1:6] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:7] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:4] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; ...
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr [1:6] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Revenge of the Sith&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; ...
+  ..$ : chr [1:4] &quot;The Empire Strikes Back&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot; &quot;The Force Awakens&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr [1:3] &quot;The Phantom Menace&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:3] &quot;The Empire Strikes Back&quot; &quot;Return of the Jedi&quot; &quot;A New Hope&quot;
+  ..$ : chr &quot;A New Hope&quot;
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:5] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot; ...
+  ..$ : chr [1:3] &quot;The Empire Strikes Back&quot; &quot;Attack of the Clones&quot; &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;The Empire Strikes Back&quot;
+  ..$ : chr &quot;The Empire Strikes Back&quot;
+  ..$ : chr [1:2] &quot;The Empire Strikes Back&quot; &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;The Empire Strikes Back&quot;
+  ..$ : chr [1:2] &quot;Return of the Jedi&quot; &quot;The Force Awakens&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;Return of the Jedi&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;The Phantom Menace&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr &quot;Attack of the Clones&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Revenge of the Sith&quot;
+  ..$ : chr [1:2] &quot;Revenge of the Sith&quot; &quot;A New Hope&quot;
+  ..$ : chr [1:2] &quot;Attack of the Clones&quot; &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;Revenge of the Sith&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr &quot;The Force Awakens&quot;
+  ..$ : chr [1:3] &quot;Attack of the Clones&quot; &quot;The Phantom Menace&quot; &quot;Revenge of the Sith&quot;
+ $ vehicles  :List of 87
+  ..$ : chr [1:2] &quot;Snowspeeder&quot; &quot;Imperial Speeder Bike&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Imperial Speeder Bike&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Tribubble bongo&quot;
+  ..$ : chr [1:2] &quot;Zephyr-G swoop bike&quot; &quot;XJ-6 airspeeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr &quot;AT-ST&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Snowspeeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Tribubble bongo&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Sith speeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Flitknot speeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Koro-2 Exodrive airspeeder&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Tsmeu-6 personal wheel bike&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+ $ starships :List of 87
+  ..$ : chr [1:2] &quot;X-wing&quot; &quot;Imperial shuttle&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;TIE Advanced x1&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;X-wing&quot;
+  ..$ : chr [1:5] &quot;Jedi starfighter&quot; &quot;Trade Federation cruiser&quot; &quot;Naboo star skiff&quot; &quot;Jedi Interceptor&quot; ...
+  ..$ : chr [1:3] &quot;Trade Federation cruiser&quot; &quot;Jedi Interceptor&quot; &quot;Naboo fighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr [1:2] &quot;Millennium Falcon&quot; &quot;Imperial shuttle&quot;
+  ..$ : chr [1:2] &quot;Millennium Falcon&quot; &quot;Imperial shuttle&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;X-wing&quot;
+  ..$ : chr &quot;X-wing&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Slave 1&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Millennium Falcon&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;A-wing&quot;
+  ..$ : chr(0) 
+  ..$ : chr &quot;Millennium Falcon&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Naboo Royal Starship&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Scimitar&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Jedi starfighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr &quot;Naboo fighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;Belbullab-22 starfighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr &quot;T-70 X-wing fighter&quot;
+  ..$ : chr(0) 
+  ..$ : chr(0) 
+  ..$ : chr [1:3] &quot;H-type Nubian yacht&quot; &quot;Naboo star skiff&quot; &quot;Naboo fighter&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Changing the type of the variable in r</span>
+
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>$</span><span class='va'>height</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="class-1-introduction-to-r-and-r-studio_files/figure-html5/class%20and%20structure-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>starwars</span><span class='op'>$</span><span class='va'>hair_color</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>$</span><span class='va'>hair_color</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>starwars</span><span class='op'>$</span><span class='va'>hair_color</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="class-1-introduction-to-r-and-r-studio_files/figure-html5/class%20and%20structure-2.png" width="624" /></p>
+</div>
+<p>Time for practicing</p>
+<p>Time for selecting different variables.</p>
+<h1 id="using-everything-else">using everything else</h1>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sw</span><span class='op'>&lt;-</span><span class='va'>starwars</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>mass</span>, <span class='va'>height</span>, <span class='va'>sex</span>, <span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>name1<span class='op'>=</span><span class='va'>name</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>weight<span class='op'>=</span><span class='va'>mass</span><span class='op'>)</span>
+<span class='co'>#rename: we start with the new name and then add the old one.</span>
+</code></pre>
+</div>
+</div>
+<h1 id="recoding">recoding</h1>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sw</span><span class='op'>$</span><span class='va'>sex</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>sw</span><span class='op'>$</span><span class='va'>sex</span><span class='op'>)</span>
+
+<span class='co'>#Removing object</span>
+<span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span> <span class='op'>(</span><span class='op'>)</span>
+
+<span class='co'>#</span>
+<span class='va'>swRec</span><span class='op'>&lt;-</span><span class='va'>sw</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name1</span>, <span class='va'>weight</span>, <span class='va'>height</span>, <span class='va'>sex</span>, <span class='va'>gender</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>name<span class='op'>=</span><span class='va'>name1</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>heightM<span class='op'>=</span> <span class='va'>height</span><span class='op'>/</span><span class='fl'>100</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>gender</span> <span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"masculine"</span>, <span class='st'>"feminine"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>gender<span class='op'>=</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/recode.html'>recode</a></span><span class='op'>(</span><span class='va'>gender</span>, masculine <span class='op'>=</span> <span class='st'>"M"</span>, feminine <span class='op'>=</span> <span class='st'>"F"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>size<span class='op'>=</span><span class='va'>height</span><span class='op'>&gt;</span><span class='fl'>1</span> <span class='op'>&amp;</span><span class='va'>weight</span><span class='op'>&gt;</span><span class='fl'>75</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  <span class='co'># we got true and false</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>size<span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>size</span><span class='op'>==</span><span class='cn'>TRUE</span>, <span class='st'>"Big"</span>, <span class='st'>"Small"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'># %in% explain that it mean include everything. IN filter, it could be used filter(gender=="masculine"| gender== "feminine"). In this case we use concatenate meaning everything inside should be filtered</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"msleep"</span><span class='op'>)</span>
+<span class='va'>a</span><span class='op'>&lt;-</span><span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>sleep_total</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>sleep_total</span><span class='op'>&gt;</span><span class='fl'>18</span><span class='op'>)</span>
+  
+<span class='va'>b</span><span class='op'>&lt;-</span><span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>sleep_total</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>sleep_total</span><span class='op'>&gt;</span><span class='fl'>18</span><span class='op'>)</span> <span class='co'># ! all variables NOT bigger than 18</span>
+
+<span class='va'>c</span><span class='op'>&lt;-</span><span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>order</span>, <span class='va'>bodywt</span>, <span class='va'>sleep_total</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>order</span><span class='op'>==</span><span class='st'>"Primates"</span>, <span class='va'>bodywt</span><span class='op'>&gt;</span><span class='fl'>20</span><span class='op'>)</span>
+
+<span class='va'>d</span><span class='op'>&lt;-</span><span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>order</span>, <span class='va'>bodywt</span>, <span class='va'>sleep_total</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>order</span><span class='op'>==</span><span class='st'>"Primates"</span><span class='op'>|</span> <span class='va'>bodywt</span><span class='op'>&gt;</span><span class='fl'>20</span><span class='op'>)</span> <span class='co'># | means or (both criteria needs to be satisfied)</span>
+
+<span class='va'>e</span><span class='op'>&lt;-</span> <span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>order</span>, <span class='va'>bodywt</span>, <span class='va'>sleep_total</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/between.html'>between</a></span><span class='op'>(</span><span class='va'>sleep_total</span>, <span class='fl'>10</span>, <span class='fl'>18</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>f</span><span class='op'>&lt;-</span> <span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>order</span>, <span class='va'>bodywt</span>, <span class='va'>sleep_total</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/near.html'>near</a></span><span class='op'>(</span><span class='va'>sleep_total</span>, <span class='fl'>10</span>, tol <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>g</span><span class='op'>&lt;-</span> <span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>order</span>, <span class='va'>bodywt</span>, <span class='va'>sleep_total</span>, <span class='va'>conservation</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>conservation</span><span class='op'>)</span><span class='op'>)</span> 
+
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>msleep</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>order</span>, <span class='va'>bodywt</span>, <span class='va'>sleep_total</span>, <span class='va'>conservation</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>order</span><span class='op'>==</span><span class='st'>"Rodentia"</span> <span class='op'>&amp;</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>conservation</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#needs to satisfy both conditions</span>
+</code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

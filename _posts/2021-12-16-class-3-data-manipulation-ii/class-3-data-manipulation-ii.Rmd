@@ -1,7 +1,7 @@
 ---
 title: "Class 3- Data Manipulation II"
 description: |
-  A short description of the post.
+  Tidyverse and more
 author:
   - name: Eveline Miranda
     url: {}
@@ -13,11 +13,359 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+library(nycflights13)
+library(tidyverse)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+##Columns
+ group_by
+ Summarize 
+ class_count
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+```{r columns}
+class_count <- mpg %>% 
+  group_by(class) %>% 
+  summarize(count = n())
+class_count %>% print()
+```
+
+# Filtering and Arranging
+
+```{r glimpse}
+data(flights)
+glimpse(flights)
+```
 
 
+
+```{r summary}
+
+summary(flights)
+```
+
+## Head and Tail
+```{r head and tail}
+head(flights)
+tail(flights)
+```
+
+
+```{r 30 minuts}
+make_up <- filter(flights,
+                  dep_delay >= 60,
+                  dep_delay - arr_delay > 30)
+```
+
+Top 10 most departure delayed flights
+
+```{r top 10}
+delayed <- arrange(flights, desc(dep_delay))
+head(delayed, 20)
+
+```
+
+shortest flight
+
+```{r shortest}
+head(arrange(flights, distance), 1)
+
+head(arrange(flights, air_time), 1)
+```
+
+```{r arrange}
+flights %>%
+  arrange(distance) %>%
+  head(1)
+```
+
+
+```{r arr}
+flights %>% 
+  arrange(air_time) %>% 
+  head(1)
+```
+
+Longest flight
+```{r longest}
+
+flights %>%
+  arrange(desc(distance)) %>%
+  head(1)
+```
+
+```{r distance}
+flights %>% 
+  arrange(desc(air_time)) %>% 
+  head(1)
+```
+
+
+#Select and mutation
+
+Give multiple ways to select dep_time, dep_delay, arr_time, and arr_delay from the flights data frame.
+
+```{r select}
+variables <- c("dep_time", "dep_delay", "arr_time", "arr_delay")
+departure_delays <- select(flights, variables)
+departures_delays <-
+  select(flights, dep_time, dep_delay, arr_time, arr_delay)
+departures_delays <-
+  select(flights, starts_with("dep"), starts_with("arr"))
+departures_delays <-
+  select(flights, ends_with("time"), ends_with("delay"))
+departures_delays <- select(flights, 4, 6:7, 9)
+```
+
+Calculate the difference between dep_time and sched_dep_time and compare the result with dep_delay. How do we explain the difference?
+
+```{r transmute}
+departure_comparison <-
+  transmute(flights,
+            dep_time,
+            sched_dep_time,
+            dep_delay,
+            time_difference = dep_time - sched_dep_time,
+            same = (dep_delay == time_difference))
+head(departure_comparison, 20)
+```
+
+
+#Rank
+
+```{r rank}
+largest <- mutate(diamonds,
+                  size_rank = min_rank(desc(carat)),
+                  price_rank = min_rank(desc(price)))
+
+largest <- diamonds %>%
+  mutate(size_rank = min_rank(desc(carat)),
+         price_rank = min_rank(desc(price)))
+
+# Largest by size
+largest %>%
+  arrange(size_rank) %>%
+  select(carat, size_rank)
+```
+
+
+
+```{r largest}
+largest %>%
+  arrange(price_rank) %>%
+  select(price, price_rank)
+```
+
+# Grouped Summaries
+
+
+```{r avarage delay}
+
+summarise(
+  flights,
+  mean_delay = mean(dep_delay, na.rm = TRUE),
+  median_delay = median(dep_delay, na.rm = TRUE)
+)
+```
+
+Average and median delay
+
+```{r Average and median delay}
+by_airport <- group_by(flights, origin)
+summarize(
+  by_airport,
+  mean_delay = mean(dep_delay, na.rm = TRUE),
+  median_delay = median(dep_delay, na.rm = TRUE)
+)
+```
+
+average distance
+```{r average distance}
+by_dest <- group_by(flights, dest)
+delay <- summarise(
+  by_dest,
+  count = n(),
+  dist = mean(distance, na.rm = TRUE),
+  delay = mean(arr_delay, na.rm = TRUE)
+)
+delay
+```
+
+average and median delay
+```{r average and median delay}
+flights %>%
+  group_by(origin) %>%
+  summarize(
+    mean_delay = mean(dep_delay, na.rm = TRUE),
+    median_delay = median(dep_delay, na.rm = TRUE)
+  )
+```
+
+#Filter, group by and summarize
+
+```{r filter and group by}
+flights %>%
+  filter(dest %in% c("ATL", "ORD", "LAX")) %>%
+  filter(carrier %in% c("AA", "DL", "UA")) %>%
+  group_by(origin, carrier, dest) %>%
+  summarize(
+    number_flights = n(),
+    location = mean(arr_delay, na.rm = TRUE),
+    scale = sd(arr_delay, na.rm = TRUE)
+  )
+```
+
+
+
+
+
+Not cancelled flights
+```{r not cancelled flights}
+not_cancelled <- flights %>%
+  filter(!is.na(dep_delay), !is.na(arr_delay))
+
+
+not_cancelled %>% 
+  group_by(tailnum) %>% 
+  summarize(
+    delay = mean(arr_delay),
+    n = n()
+  )
+
+```
+
+
+
+```{r total}
+not_cancelled %>% 
+  group_by(origin) %>% 
+  count(carrier)
+```
+
+```{r before }
+
+not_cancelled <- flights %>%
+  filter(!is.na(dep_delay), !is.na(arr_delay))
+```
+
+```{r not.}
+
+
+not_cancelled %>% 
+  group_by(tailnum) %>% 
+  summarize(
+    delay = mean(arr_delay),
+    n = n()
+  )
+
+not_cancelled %>% 
+  filter(dep_time < 500) %>% 
+  count(month, day)
+
+
+not_cancelled %>% 
+  group_by(month, day) %>% 
+  summarize(n_early = sum(dep_time < 500))
+
+
+not_cancelled %>% 
+  group_by(origin) %>% 
+  summarize(proportion = mean(dep_delay > 60))
+```
+
+```{r select and filter }
+
+flights %>% 
+  group_by(origin) %>%
+  mutate(departure_rank = min_rank(desc(dep_delay))) %>% 
+  filter(departure_rank == 1) %>% 
+  select(origin, carrier, dep_delay, month, day, sched_dep_time)
+
+```
+
+
+```{r table X}
+data(diamonds)
+summary(diamonds)
+
+```
+
+#Exploratory Data Analysis
+Formulate questions about your data
+Investigate answers to questions by visualizing, transforming, and modelling
+Evolve and spawn new questions based on what is learned
+Data cleaning also involves visualization, transformation, and modelling.
+
+#Questions
+"The key to asking quality questions is to generate a large quantity of questions."
+
+##Two types of questions:
+
+How is a variable distributed?
+How are variables related to each other?
+Basic definitions
+Variable: quantity, quality, or property
+Value: state or level of a variable when it is measured
+Observation: "a set of measurements under similar conditions"
+Tabular data: "a set of values, each associated with a variable and an observation."
+##Distribution
+Possible values
+Frequency or probability of observing values
+Describing the distribution gives us a basic set of questions to start asking. These in turn provoke additional questions. When considering a distribution, we should organize our preliminary investigation around:
+
+##Location or central tendency (mean and median)
+Scale or spread (sd, range, and interquartile range)
+Symmetry
+Outliers
+
+#Quantiles
+```{r quantiles}
+
+quantile(diamonds$carat)
+summary(diamonds$carat)
+
+```
+
+#Interquartile range
+The length of the box in the boxplot is called the interquartile range. It is the third quartile minus the first quartile.
+
+
+#Covariation
+
+```{r}
+summary(mpg$hwy)
+sd(mpg$hwy)
+IQR(mpg$hwy)
+```
+
+```{r table 1}
+set.seed(1234) # Needed so all get the sample random choice of observations
+diamonds2 <- diamonds %>%
+  sample_n(1000)
+
+```
+
+```{r table 2}
+diamonds2 %>%
+  count(clarity)
+
+```
+#Linear Model
+```{r table 3}
+model <- lm(log(price) ~ log(carat) + clarity + color + cut + cut * log(carat),
+            data = diamonds2)
+model %>% summary()
+
+```
+
+```{r table 4}
+model %>% anova()
+
+```
+
+```{r table 5}
+# Load workspace
+Movies <- read_csv(url("http://govfinance.byu.edu/govfinance/classes/dataScience/lectures/illustrations/Movies.csv"))
+
+Movies %>% glimpse()
+```

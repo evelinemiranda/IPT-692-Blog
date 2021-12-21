@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["class-2-data-manipulation_files/anchor-4.2.2/anchor.min.js","class-2-data-manipulation_files/bowser-1.9.3/bowser.min.js","class-2-data-manipulation_files/distill-2.2.21/template.v2.js","class-2-data-manipulation_files/header-attrs-2.11/header-attrs.js","class-2-data-manipulation_files/jquery-3.6.0/jquery-3.6.0.js","class-2-data-manipulation_files/jquery-3.6.0/jquery-3.6.0.min.js","class-2-data-manipulation_files/jquery-3.6.0/jquery-3.6.0.min.map","class-2-data-manipulation_files/popper-2.6.0/popper.min.js","class-2-data-manipulation_files/tippy-6.2.7/tippy-bundle.umd.min.js","class-2-data-manipulation_files/tippy-6.2.7/tippy-light-border.css","class-2-data-manipulation_files/tippy-6.2.7/tippy.css","class-2-data-manipulation_files/tippy-6.2.7/tippy.umd.min.js","class-2-data-manipulation_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["class-2-data-manipulation_files/anchor-4.2.2/anchor.min.js","class-2-data-manipulation_files/bowser-1.9.3/bowser.min.js","class-2-data-manipulation_files/distill-2.2.21/template.v2.js","class-2-data-manipulation_files/figure-html5/basic codes-1.png","class-2-data-manipulation_files/figure-html5/basic codes-2.png","class-2-data-manipulation_files/figure-html5/basic codes-3.png","class-2-data-manipulation_files/header-attrs-2.11/header-attrs.js","class-2-data-manipulation_files/jquery-3.6.0/jquery-3.6.0.js","class-2-data-manipulation_files/jquery-3.6.0/jquery-3.6.0.min.js","class-2-data-manipulation_files/jquery-3.6.0/jquery-3.6.0.min.map","class-2-data-manipulation_files/popper-2.6.0/popper.min.js","class-2-data-manipulation_files/tippy-6.2.7/tippy-bundle.umd.min.js","class-2-data-manipulation_files/tippy-6.2.7/tippy-light-border.css","class-2-data-manipulation_files/tippy-6.2.7/tippy.css","class-2-data-manipulation_files/tippy-6.2.7/tippy.umd.min.js","class-2-data-manipulation_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1482,9 +1482,123 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cars</span>, col<span class='op'>=</span><span class='st'>"blue"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="class-2-data-manipulation_files/figure-html5/basic%20codes-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>$</span><span class='va'>speed</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="class-2-data-manipulation_files/figure-html5/basic%20codes-2.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     speed           dist       
+ Min.   : 4.0   Min.   :  2.00  
+ 1st Qu.:12.0   1st Qu.: 26.00  
+ Median :15.0   Median : 36.00  
+ Mean   :15.4   Mean   : 42.98  
+ 3rd Qu.:19.0   3rd Qu.: 56.00  
+ Max.   :25.0   Max.   :120.00  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/attach.html'>attach</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>speed</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="class-2-data-manipulation_files/figure-html5/basic%20codes-3.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>dist</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>speed</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 50</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>speed</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> [1]  4  7  8  9 10 11 12 13 14 15 16 17 18 19 20 22 23 24 25</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>cars</span>, <span class='fl'>3</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  speed dist
+1     4    2
+2     4   10
+3     7    4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>cars</span>, <span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>   speed dist
+41    20   52
+42    20   56
+43    20   64
+44    22   66
+45    23   54
+46    24   70
+47    24   92
+48    24   93
+49    24  120
+50    25   85</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cars</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code> [1]  4  4  7  7  8  9 10 10 10 11 11 12 12 12 12 13 13 13 13 14 14 14
+[23] 14 15 15 15 16 16 17 17 17 18 18 18 18 19 19 19 20 20 20 20 20 22
+[45] 23 24 24 24 24 25</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cars</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>25</span>,<span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>   speed dist
+1      4    2
+2      4   10
+3      7    4
+4      7   22
+5      8   16
+6      9   10
+7     10   18
+8     10   26
+9     10   34
+10    11   17
+11    11   28
+12    12   14
+13    12   20
+14    12   24
+15    12   28
+16    13   26
+17    13   34
+18    13   34
+19    13   46
+20    14   26
+21    14   36
+22    14   60
+23    14   80
+24    15   20
+25    15   26</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>cars</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>,<span class='fl'>1</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code> [1]  4  4  7  7  8  9 10 10 10 11</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Functions</span>
+<span class='op'>?</span><span class='va'>median</span>
+</code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
